@@ -24,6 +24,8 @@ const scroll = new LocomotiveScroll({
   },
 });
 
+inject();
+
 setTimeout(() => {
   scroll.update();
 }, 1000);
