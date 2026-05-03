@@ -583,10 +583,12 @@
       text-align: center;
 
       @include media("<=phone") {
-        max-width: 255px;
+        max-width: 100%;
         width: 100%;
         text-align: left;
         margin-left: auto;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
         word-break: break-word;
       }
 
@@ -623,6 +625,10 @@
           text-align: left;
         }
 
+        @include media("<=phone") {
+          font-size: 24px;
+        }
+
         @media (any-pointer: fine) {
           &:hover {
             color: $col-orange;
@@ -657,8 +663,10 @@
     }
 
     @include media("<=phone") {
-      max-width: 255px;
+      max-width: 100%;
       width: 100%;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
     }
 
     &__left {
@@ -725,7 +733,7 @@
           }
 
           @include media("<=phone") {
-            max-width: 255px;
+            max-width: 100%;
             width: 100%;
           }
 
