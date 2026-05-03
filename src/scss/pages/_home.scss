@@ -62,8 +62,8 @@
       width: 100%;
 
       @include media("<=phone") {
-        max-width: 175px;
-        width: 100%;
+        max-width: unset;
+        width: auto;
         margin-left: auto;
 
         br {
@@ -354,13 +354,13 @@
     max-width: 113rem;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 9.6rem;
-    padding-bottom: 9.6rem;
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
 
     @include media(">tablet") {
       display: flex;
-      padding-top: 24rem;
-      padding-bottom: 24rem;
+      padding-top: 9.6rem;
+      padding-bottom: 9.6rem;
     }
 
     &__top,
@@ -775,6 +775,265 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+// Nav buttons wrapper
+.nav__buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-shrink: 0;
+
+  @include media("<=phone") {
+    gap: 0.4rem;
+
+    .c-button {
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+  }
+}
+
+// Experience Section
+.home__experience {
+  @extend %padding-home;
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+
+  @include media(">tablet") {
+    padding-top: 9.6rem;
+    padding-bottom: 9.6rem;
+  }
+
+  &__header {
+    margin-bottom: 3.2rem;
+
+    @include media("<=phone") {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .experience__title {
+    @extend %description-12;
+    text-transform: uppercase;
+    color: $col-boulder;
+  }
+
+  &__timeline {
+    max-width: 90rem;
+    margin-left: auto;
+
+    @include media("<=phone") {
+      max-width: 100%;
+    }
+  }
+
+  .experience__item {
+    display: flex;
+    gap: 4rem;
+    padding: 2.4rem 0;
+    border-top: 2px solid $col-boulder;
+
+    @include media("<=phone") {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+  }
+
+  .experience__date {
+    @extend %description-12;
+    color: $col-boulder;
+    min-width: 16rem;
+    flex-shrink: 0;
+    padding-top: 0.4rem;
+    text-transform: uppercase;
+  }
+
+  .experience__details {
+    flex: 1;
+  }
+
+  .experience__role {
+    @extend %description-16;
+    color: $col-gray;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .experience__company {
+    @extend %description-12;
+    color: $col-boulder;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .experience__desc {
+    @extend %description-16;
+    color: $col-gray;
+    list-style: none;
+    padding: 0;
+
+    li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+
+      &::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: $col-boulder;
+      }
+    }
+  }
+}
+
+// Education Section
+.home__education {
+  @extend %padding-home;
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+
+  @include media(">tablet") {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+
+  &__header {
+    margin-bottom: 3.2rem;
+
+    @include media("<=phone") {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .education__title {
+    @extend %description-12;
+    text-transform: uppercase;
+    color: $col-boulder;
+  }
+
+  &__items {
+    max-width: 90rem;
+    margin-left: auto;
+
+    @include media("<=phone") {
+      max-width: 100%;
+    }
+  }
+
+  .education__item {
+    display: flex;
+    gap: 4rem;
+    padding: 2.4rem 0;
+    border-top: 2px solid $col-boulder;
+
+    @include media("<=phone") {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+  }
+
+  .education__date {
+    @extend %description-12;
+    color: $col-boulder;
+    min-width: 16rem;
+    flex-shrink: 0;
+    padding-top: 0.4rem;
+    text-transform: uppercase;
+  }
+
+  .education__degree {
+    @extend %description-16;
+    color: $col-gray;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .education__institution {
+    @extend %description-12;
+    color: $col-boulder;
+    text-transform: uppercase;
+  }
+}
+
+// Technical Skills Section
+.home__skills {
+  @extend %padding-home;
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+
+  @include media(">tablet") {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+
+  &__header {
+    margin-bottom: 3.2rem;
+
+    @include media("<=phone") {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .skills__title {
+    @extend %description-12;
+    text-transform: uppercase;
+    color: $col-boulder;
+  }
+
+  &__grid {
+    max-width: 90rem;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+
+    @include media("<=tablet") {
+      grid-template-columns: 1fr;
+      gap: 2.4rem;
+    }
+
+    @include media("<=phone") {
+      max-width: 100%;
+    }
+  }
+
+  .skills__category {
+    padding: 2rem 0;
+    border-top: 2px solid $col-boulder;
+  }
+
+  .skills__label {
+    @extend %description-12;
+    text-transform: uppercase;
+    color: $col-boulder;
+    margin-bottom: 1.6rem;
+  }
+
+  .skills__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .skill-tag {
+    @extend %description-12;
+    padding: 0.6rem 1.4rem;
+    border: 1px solid $col-boulder;
+    border-radius: 45px;
+    color: $col-gray;
+    transition: all 0.3s;
+    white-space: nowrap;
+
+    @media (any-pointer: fine) {
+      &:hover {
+        border-color: $col-orange;
+        color: $col-black;
+        background: $col-orange;
       }
     }
   }
